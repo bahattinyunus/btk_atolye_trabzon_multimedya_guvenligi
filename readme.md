@@ -10,6 +10,14 @@ _BTK Atölye • Multimedya Güvenliği • Eğitim ve Örnek Proje Repo_
 
 ---
 
+> **EN (short summary)**: This repository combines lecture notes and
+> example Python code about using AI for multimedia security
+> (deepfake detection, steganography, watermarking, anomaly detection
+> and basic crypto / access control). It is designed as a teaching
+> resource, not a production-ready system.
+
+---
+
 ## 🔍 TL;DR
 
 Bu repo;
@@ -48,6 +56,12 @@ Bu depo, **kavramsal anlatım** ve **örnek proje iskeleti** olmak üzere iki an
 - `multimedya-guvenligi-ai/`: Bu örnek proje yapısının **kodlanmış hâli**. İçinde Python kodları, eğitim ve çıkarım scriptleri bulunur.
 - `kümeler/`: Bilgi güvenliği, veri güvenliği ve siber güvenlik kavramlarını özetleyen destekleyici notlar.
 - `ransomware.md`, `stegonografi.md`, `usom.md`: İlgili güvenlik kavramlarını derinlemesine ele alan ek ders notları.
+
+Ek olarak:
+
+- `tehditler.md`: Multimedya ve genel siber güvenlik bağlamındaki
+  tehdit türlerini (ör. ransomware, phishing, zararlı yazılım,
+  ağ saldırıları vb.) özetleyen destekleyici bir dosya.
 
 Öğrenme akışını şu şekilde takip edebilirsin:
 

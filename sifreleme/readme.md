@@ -493,3 +493,24 @@ Bunlar, modern siber güvenlikte kripto uygulayan herkesin bilmesi gereken yapı
 
 ---
 
+## ▶️ Nasıl Çalıştırılır? (Kod Demoları)
+
+Bu klasörde, teorik içeriği destekleyen iki küçük Python demo dosyası vardır:
+
+- `aes_demo.py` → `multimedya-guvenligi-ai/src/crypto/symmetric_aes_demo.py` modülünü kullanarak **simetrik şifreleme** (AES-benzeri) örneği çalıştırır.
+- `rsa_demo.py` → `multimedya-guvenligi-ai/src/crypto/rsa_demo.py` modülünü kullanarak **asimetrik şifreleme + dijital imza** örneği çalıştırır.
+
+Örnek kullanım (repo kökünden değil, bu klasörden çalıştır):
+
+```bash
+cd sifreleme
+python aes_demo.py
+
+python rsa_demo.py
+```
+
+> Not: Kodların çalışması için aynı repoda `multimedya-guvenligi-ai/` projesi
+> bulunmalı ve oradaki `requirements.txt` dosyasındaki bağımlılıklar
+> kurulmuş olmalıdır.
+
+

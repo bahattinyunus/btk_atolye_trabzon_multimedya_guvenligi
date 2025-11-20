@@ -505,3 +505,24 @@ Bu seviye, bir **siber güvenlik uzmanı** veya **cloud architect** seviyesinde 
 
 ---
 
+## ▶️ Nasıl Çalıştırılır? (Kod Demoları)
+
+Bu klasörde, erişim kontrolü kavramlarını somutlaştıran iki küçük Python demo dosyası vardır:
+
+- `rbac_demo.py` → `multimedya-guvenligi-ai/src/access_control/rbac_demo.py` modülünü kullanarak **rol tabanlı erişim kontrolü (RBAC)** örneği çalıştırır.
+- `abac_demo.py` → `multimedya-guvenligi-ai/src/access_control/abac_demo.py` modülünü kullanarak **attribute tabanlı erişim kontrolü (ABAC)** örneği çalıştırır.
+
+Örnek kullanım (bu klasörden):
+
+```bash
+cd erisim_control
+python rbac_demo.py
+
+python abac_demo.py
+```
+
+> Not: Kodların çalışması için aynı repoda `multimedya-guvenligi-ai/` projesi
+> bulunmalı ve oradaki `requirements.txt` dosyasındaki bağımlılıklar
+> kurulmuş olmalıdır.
+
+
