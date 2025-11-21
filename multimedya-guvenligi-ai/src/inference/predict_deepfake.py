@@ -27,6 +27,7 @@ def predict_video(video_path: str | None = None, model_path: str | None = None) 
         score = model(x).item()
 
     print("Dummy deepfake skoru (0=real, 1=fake'e yakın):", score)
+    return score
 
 
 if __name__ == "__main__":
