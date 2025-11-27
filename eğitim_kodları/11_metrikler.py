@@ -62,4 +62,5 @@ disp = ConfusionMatrixDisplay(
 )
 disp.plot(cmap='Blues')                     # Matristen bir ısı haritası oluştur (Blues renk haritası)
 plt.title("Karışıklık Matrisi")             # Grafik başlığı
-plt.show()                                  # Grafiği göster
+# plt.show()                                  # Grafiği göster (Otomasyon için kapatıldı)
+print("Grafik oluşturuldu (gösterilmedi).")

@@ -55,6 +55,7 @@ Hem teori hem de pratik (kod) içeren bir eğitim seti olarak düşünülebilir.
 btk_atolye_multimedya_guvenligi/
 ├── 📂 eğitim_kodları/          # Makine öğrenmesi ve CNN örnekleri
 │   ├── 📄 10_cnnDenemesi.py    # CNN ile görüntü sınıflandırma (CIFAR-10)
+│   ├── 📄 11_metrikler.py      # Sınıflandırma Metrikleri (Accuracy, F1, vb.)
 │   ├── 📄 12_transferOgrenmeDenemesi.py # Transfer Learning (ResNet18)
 │   └── 📄 ...                  # Diğer ML algoritmaları (Regresyon, SVM, vb.)
 ├── 📂 multimedya-guvenligi-ai/ # Örnek proje iskeleti
