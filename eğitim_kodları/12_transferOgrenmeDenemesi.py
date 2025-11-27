@@ -24,7 +24,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Eğitim verisi için dönüşümler
 train_transform = transforms.Compose([
-    transforms.RandomResizedCrop(224),          # Görüntüyü rastgele kırp ve 224x224'e yeniden boyutlandır
+    transforms.Resize((224, 224)),              # ResNet için 224x224 gerekli
     transforms.RandomHorizontalFlip(),          # %50 olasılıkla yatay çevirme uygula
     transforms.ToTensor(),                      # Görüntüyü tensöre çevir (0-1 arası normalize eder)
     transforms.Normalize([0.485, 0.456, 0.406],  # RGB kanal ortalamaları
@@ -33,8 +33,7 @@ train_transform = transforms.Compose([
 
 # Doğrulama verisi için dönüşümler (augmentasyon içermez)
 val_transform = transforms.Compose([
-    transforms.Resize(256),                     # Görüntüyü 256 piksele yeniden boyutlandır
-    transforms.CenterCrop(224),                 # Ortadan 224x224 boyutunda kırp
+    transforms.Resize((224, 224)),              # ResNet için 224x224 gerekli
     transforms.ToTensor(),
     transforms.Normalize([0.485, 0.456, 0.406],
                          [0.229, 0.224, 0.225])
@@ -44,9 +43,10 @@ val_transform = transforms.Compose([
 #         VERİ SETİ           #
 # ============================ #
 
-# ImageFolder formatındaki veri setlerini yükle (alt klasörler sınıf adlarıdır)
-train_dataset = datasets.ImageFolder("data2/train", transform=train_transform)
-val_dataset = datasets.ImageFolder("data2/test", transform=val_transform)
+# CIFAR-10 Veri Setini İndir ve Yükle
+print("Veri seti indiriliyor/yükleniyor...")
+train_dataset = datasets.CIFAR10(root='./data', train=True, download=True, transform=train_transform)
+val_dataset = datasets.CIFAR10(root='./data', train=False, download=True, transform=val_transform)
 
 # Mini-batch veri yükleyici (shuffle=True → sıralamayı karıştırır)
 train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
@@ -60,7 +60,7 @@ val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
 model = models.resnet18(pretrained=True)
 
 # Modelin son katmanını (fc) kendi sınıf sayımıza göre değiştir
-num_classes = len(train_dataset.classes)  # Kaç farklı sınıf varsa öğren
+num_classes = 10  # CIFAR-10'da 10 sınıf var
 model.fc = nn.Linear(model.fc.in_features, num_classes)  # Yeni Linear katman ile değiştir
 
 # Modeli GPU/CPU üzerine taşı
@@ -87,20 +87,23 @@ all_preds = []    # Tahmin edilen sınıflar
 all_labels = []   # Gerçek etiketler
 
 # Tüm eğitim verisi üzerinde bir epoch'luk eğitim
-for images, labels in train_loader:
-    images, labels = images.to(device), labels.to(device)  # Veriyi cihaza aktar (GPU/CPU)
+# Hızlı test için sadece 1 epoch yapıyoruz
+for epoch in range(1):
+    print(f"Epoch {epoch+1}/1 Başlıyor...")
+    for images, labels in train_loader:
+        images, labels = images.to(device), labels.to(device)  # Veriyi cihaza aktar (GPU/CPU)
 
-    outputs = model(images)                # Model üzerinden tahmin al
-    loss = criterion(outputs, labels)      # Gerçek etiketlerle karşılaştır, kaybı hesapla
+        outputs = model(images)                # Model üzerinden tahmin al
+        loss = criterion(outputs, labels)      # Gerçek etiketlerle karşılaştır, kaybı hesapla
 
-    optimizer.zero_grad()                  # Önceki gradyanları sıfırla
-    loss.backward()                        # Geri yayılım işlemi (gradyan hesaplama)
-    optimizer.step()                       # Ağırlıkları güncelle (optimizasyon)
+        optimizer.zero_grad()                  # Önceki gradyanları sıfırla
+        loss.backward()                        # Geri yayılım işlemi (gradyan hesaplama)
+        optimizer.step()                       # Ağırlıkları güncelle (optimizasyon)
 
-    # Tahminleri listeye ekle (metrikler için)
-    _, preds = torch.max(outputs, 1)       # En yüksek olasılığa sahip sınıf tahmini
-    all_preds.extend(preds.cpu().numpy())  # GPU'dan CPU'ya taşı, numpy dizisine çevir
-    all_labels.extend(labels.cpu().numpy())
+        # Tahminleri listeye ekle (metrikler için)
+        _, preds = torch.max(outputs, 1)       # En yüksek olasılığa sahip sınıf tahmini
+        all_preds.extend(preds.cpu().numpy())  # GPU'dan CPU'ya taşı, numpy dizisine çevir
+        all_labels.extend(labels.cpu().numpy())
 
 # ============================ #
 #      EĞİTİM METRİKLERİ       #
