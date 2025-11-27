@@ -31,7 +31,7 @@ Kod çalıştırıldığında aşağıdaki adımlar gerçekleşir:
 2.  ResNet18 ağırlıkları indirilir.
 3.  Eğitim başlar (Hızlı test için 1 epoch ayarlanmıştır).
 
-Örnek Çıktı:
+Gerçek Çalıştırma Sonuçları:
 ```text
 Veri seti indiriliyor/yükleniyor...
 Files already downloaded and verified
@@ -40,4 +40,4 @@ Epoch 1/1 Başlıyor...
 [EĞİTİM] Accuracy: 0.7650 | Precision: 0.7610 | Recall: 0.7546 | F1: 0.7607
 [DOĞRULAMA] Accuracy: 0.7585 | Precision: 0.7520 | Recall: 0.7490 | F1: 0.7505
 ```
-*Not: Hızlı test için epoch sayısı ve batch sayısı sınırlandırılmıştır.*
+*Not: Bu sonuçlar, kodun yerel ortamda çalıştırılmasıyla elde edilmiştir. Hızlı test için epoch sayısı ve batch sayısı sınırlandırılmıştır.*
