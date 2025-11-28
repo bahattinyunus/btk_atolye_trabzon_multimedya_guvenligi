@@ -57,6 +57,7 @@ btk_atolye_multimedya_guvenligi/
 │   ├── 📄 10_cnnDenemesi.py    # CNN ile görüntü sınıflandırma (CIFAR-10)
 │   ├── 📄 11_metrikler.py      # Sınıflandırma Metrikleri (Accuracy, F1, vb.)
 │   ├── 📄 12_transferOgrenmeDenemesi.py # Transfer Learning (ResNet18)
+│   ├── 📄 13_ganOrnek.py       # Stil Aktarımı (Style Transfer)
 │   └── 📄 ...                  # Diğer ML algoritmaları (Regresyon, SVM, vb.)
 ├── 📂 multimedya-guvenligi-ai/ # Örnek proje iskeleti
 ├── 📂 deepfake/                # Deepfake notları ve örnekleri
