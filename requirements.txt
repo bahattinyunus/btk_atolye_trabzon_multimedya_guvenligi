@@ -5,3 +5,9 @@ matplotlib
 pandas
 scikit-learn
 Pillow
+tensorflow
+tensorflow_hub
+diffusers
+transformers
+accelerate
+safetensors

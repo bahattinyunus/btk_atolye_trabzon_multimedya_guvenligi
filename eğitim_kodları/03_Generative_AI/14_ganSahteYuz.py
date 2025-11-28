@@ -103,7 +103,8 @@ with torch.no_grad():
 # -----------------------------------------
 
 # Çıktıların saklanacağı klasörü belirliyoruz.
-output_dir = "veriler"
+# Çıktıların saklanacağı klasörü belirliyoruz.
+output_dir = "../veriler"
 
 # Eğer 'veriler' klasörü yoksa oluşturuyoruz (exist_ok=True: varsa hata vermez).
 os.makedirs(output_dir, exist_ok=True)

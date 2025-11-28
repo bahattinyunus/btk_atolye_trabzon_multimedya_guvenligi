@@ -54,13 +54,17 @@ Hem teori hem de pratik (kod) içeren bir eğitim seti olarak düşünülebilir.
 ```
 btk_atolye_multimedya_guvenligi/
 ├── 📂 eğitim_kodları/          # Makine öğrenmesi ve CNN örnekleri
-│   ├── 📄 10_cnnDenemesi.py    # CNN ile görüntü sınıflandırma (CIFAR-10)
-│   ├── 📄 11_metrikler.py      # Sınıflandırma Metrikleri (Accuracy, F1, vb.)
-│   ├── 📄 12_transferOgrenmeDenemesi.py # Transfer Learning (ResNet18)
-│   ├── 📄 13_ganOrnek.py       # Stil Aktarımı (Style Transfer)
-│   ├── 📄 14_ganSahteYuz.py    # GAN ile Sahte Yüz Üretimi (StyleGAN2)
-│   ├── 📄 15_difuzyonSahteYuz.py # Difüzyon ile Sahte Yüz (Stable Diffusion)
-│   └── 📄 ...                  # Diğer ML algoritmaları (Regresyon, SVM, vb.)
+│   ├── 📂 01_Temel_ML/         # Regresyon, Sınıflandırma, Kümeleme
+│   │   ├── 📄 1_dogrusalRegresyon.py
+│   │   └── ...
+│   ├── 📂 02_Derin_Ogrenme/    # CNN, Transfer Learning
+│   │   ├── 📄 10_cnnDenemesi.py
+│   │   └── ...
+│   ├── 📂 03_Generative_AI/    # GAN, Diffusion, Style Transfer
+│   │   ├── 📄 13_ganOrnek.py
+│   │   ├── 📄 14_ganSahteYuz.py
+│   │   └── 📄 15_difuzyonSahteYuz.py
+│   └── 📂 veriler/             # Ortak veri klasörü
 ├── 📂 multimedya-guvenligi-ai/ # Örnek proje iskeleti
 ├── 📂 deepfake/                # Deepfake notları ve örnekleri
 ├── 📂 stegonografi/            # Steganografi notları

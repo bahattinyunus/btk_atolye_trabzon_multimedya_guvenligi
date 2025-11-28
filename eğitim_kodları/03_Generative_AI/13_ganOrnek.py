@@ -16,22 +16,23 @@ import matplotlib.pyplot as plt
 # ----------------------- AYARLAR ----------------------- #
 import os
 
-# Veri klasörünü oluştur (Çıktı için)
-if not os.path.exists("veriler"):
-    os.makedirs("veriler")
+# Veri klasörünü oluştur (Çıktı için) - Bir üst dizindeki veriler klasörünü kullan
+output_dir = "../veriler"
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
 
 # Görüntüleri indir (eğer yoksa) ve yollarını al
 # AI Temalı Görseller (Yerel olarak oluşturuldu ve veriler klasörüne kopyalandı)
 # Content: AI Robot Face
-CONTENT_IMAGE_PATH = "veriler/ai_content.png"
+CONTENT_IMAGE_PATH = os.path.join(output_dir, "ai_content.png")
 print(f"Content path: {CONTENT_IMAGE_PATH}")
 
 # Style: Matrix/Cyberpunk Code
-STYLE_IMAGE_PATH = "veriler/ai_style.png"
+STYLE_IMAGE_PATH = os.path.join(output_dir, "ai_style.png")
 print(f"Style path: {STYLE_IMAGE_PATH}")
 
 # Stil uygulanmış sonucu kaydedeceğimiz çıktı dosyasının adı.
-OUTPUT_IMAGE_PATH = "veriler/output_ai_theme.jpg"
+OUTPUT_IMAGE_PATH = os.path.join(output_dir, "output_ai_theme.jpg")
 
 
 # ------------------------------------------------------ #

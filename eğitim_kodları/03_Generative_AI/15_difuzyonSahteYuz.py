@@ -123,7 +123,8 @@ if OUTPUT_SIZE != BASE_SIZE:
 # -----------------------------------------
 
 # Çıktı klasörü: 'veriler'
-output_dir = "veriler"
+# Çıktı klasörü: 'veriler'
+output_dir = "../veriler"
 
 # Klasör yoksa oluştur (exist_ok=True: varsa hata verme).
 os.makedirs(output_dir, exist_ok=True)
