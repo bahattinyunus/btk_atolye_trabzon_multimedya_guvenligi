@@ -58,6 +58,8 @@ btk_atolye_multimedya_guvenligi/
 │   ├── 📄 11_metrikler.py      # Sınıflandırma Metrikleri (Accuracy, F1, vb.)
 │   ├── 📄 12_transferOgrenmeDenemesi.py # Transfer Learning (ResNet18)
 │   ├── 📄 13_ganOrnek.py       # Stil Aktarımı (Style Transfer)
+│   ├── 📄 14_ganSahteYuz.py    # GAN ile Sahte Yüz Üretimi (StyleGAN2)
+│   ├── 📄 15_difuzyonSahteYuz.py # Difüzyon ile Sahte Yüz (Stable Diffusion)
 │   └── 📄 ...                  # Diğer ML algoritmaları (Regresyon, SVM, vb.)
 ├── 📂 multimedya-guvenligi-ai/ # Örnek proje iskeleti
 ├── 📂 deepfake/                # Deepfake notları ve örnekleri
